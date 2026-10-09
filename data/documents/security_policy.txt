@@ -1,0 +1,56 @@
+SPOONFUL INC. — INFORMATION SECURITY POLICY
+Document owner: Chief Information Security Officer (CISO), Priya Raman
+Version 4.2 — Effective January 15, 2026
+Review cycle: annually, or after any Severity 1 security incident
+
+1. PURPOSE AND SCOPE
+
+This policy defines how Spoonful protects customer data, employee data, payment information, and company systems. It applies to all full-time employees, part-time employees, contractors, and third-party vendors who access Spoonful systems, including the customer ordering platform, the warehouse management system, and internal tools such as email and the HR portal. Violations of this policy may result in disciplinary action up to and including termination of employment or contract.
+
+2. DATA CLASSIFICATION
+
+All Spoonful data falls into one of four classes:
+
+Public: marketing materials, published recipes, and press releases. No restrictions on sharing.
+
+Internal: meeting notes, internal wikis, and non-sensitive project documents. May be shared with any employee but not outside the company.
+
+Confidential: customer names, delivery addresses, order history, employee records, and unreleased financial results. Access is granted on a need-to-know basis and must be approved by the data owner.
+
+Restricted: payment card data, government ID numbers, passwords, and encryption keys. Restricted data must never be stored on laptops, pasted into chat tools, or sent to external AI services. Spoonful does not store full card numbers; payments are tokenised by our payment processor.
+
+3. ACCESS CONTROL
+
+Access follows the principle of least privilege: employees receive only the access needed for their current role. Managers must review their team's system access every quarter. Access for departing employees must be revoked within 4 hours of their final working day. Shared accounts are prohibited except for documented service accounts owned by the Platform team.
+
+4. PASSWORDS AND AUTHENTICATION
+
+Passwords must be at least 14 characters long and must not reuse any of the previous 10 passwords. Multi-factor authentication (MFA) is mandatory for all systems that support it, including email, the code repository, the cloud console, and the HR portal. Hardware security keys are required for engineers with production access. Passwords must be stored in the company-approved password manager; writing passwords down or storing them in spreadsheets is prohibited.
+
+5. DEVICE SECURITY
+
+Company laptops must have full-disk encryption enabled, automatic screen lock after 5 minutes of inactivity, and the endpoint protection agent installed. Operating system security updates must be applied within 14 days of release. Personal devices may access email only through the managed mobile application. Lost or stolen devices must be reported to the IT Service Desk within 1 hour of discovery.
+
+6. INCIDENT RESPONSE
+
+Any suspected security incident must be reported immediately to security@spoonful.example or through the #security-incidents channel. Incidents are classified by severity:
+
+Severity 1: confirmed breach of Confidential or Restricted data, or a full outage of the ordering platform. The on-call security lead must respond within 15 minutes and the CISO must be notified within 1 hour.
+
+Severity 2: suspected breach, malware on a company device, or a partial outage. Response within 1 hour.
+
+Severity 3: policy violations without data exposure, such as a phishing email that was reported but not clicked. Response within 1 business day.
+
+If customer personal data is confirmed to be exposed, the Legal team must assess regulatory notification obligations within 72 hours. Every Severity 1 and Severity 2 incident requires a blameless post-incident review within 10 business days.
+
+7. SECURITY TRAINING
+
+All employees must complete security awareness training during onboarding and annually thereafter. The Security team runs simulated phishing exercises every quarter. Employees who click a simulated phishing link are enrolled in a short refresher module; repeated failures are escalated to the employee's manager.
+
+8. THIRD-PARTY VENDORS
+
+Vendors that process Confidential or Restricted data must complete a security questionnaire and sign a data processing agreement before receiving access. High-risk vendors are reassessed every year. Vendor access is reviewed by the Procurement and Security teams at contract renewal.
+
+9. EXCEPTIONS
+
+Exceptions to this policy must be requested in writing, approved by the CISO, and documented with an expiry date no more than 6 months in the future.

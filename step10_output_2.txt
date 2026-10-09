@@ -1,0 +1,75 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8644.24it/s]
+Spoonful Enterprise RAG System
+Type 'exit' to quit.
+
+Ask a question: 
+Query: Analyse our sales performance and recommend policy changes based on our customer success strategies
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+
+[TOKENOMICS] Agent: manager-classifier | Input: 92 | Output: 1 | Cost: $0.000030
+Route: both
+
+[TOKENOMICS] Agent: qualitative | Input: 2514 | Output: 278 | Cost: $0.001449
+
+[Qualitative]
+Based on the provided documents, I can provide the following information regarding sales performance analysis and policy recommendations based on customer success strategies:
+
+* **Sales Regions and Performance Tracking:** Spoonful sells to business customers in four regions (North, South, East, and West), each led by a Regional Sales Lead [Source 2]. At the end of each quarter, these leads present revenue, units sold, and discount levels, and any region missing its quarterly revenue target by more than 10% must present a recovery plan [Source 2].
+* **Strategic Priorities:** "Office Lunch" (pre-portioned individual meals delivered to offices) has the highest margin and is designated as the strategic priority product line for 2026 [Source 2].
+* **Sales and Customer Success Handoff:** When a business contract is signed, the Sales representative must hand the account over to Customer Success within 2 business days, providing notes on customer goals and promises made [Source 2]. 
+
+*However*, the provided documents do not contain actual sales performance data (such as current revenue numbers, regional outcomes, or sales figures) or specific policy changes proposed *as a direct result* of an analysis combining sales performance and customer success strategies beyond the existing written policies. 
+
+Therefore, I cannot find this specific performance analysis and corresponding policy recommendation in the provided documents.
+
+[TOKENOMICS] Agent: quantitative | Input: 702 | Output: 303 | Cost: $0.000968
+
+[Quantitative]
+Based on the provided data, sales performance across regions and products is as follows:
+
+* **Office Lunch** is the highest-generating product by total revenue across all regions, yielding between $258,552.0 (West) and $286,956.0 (North) with a consistent average price of $12.0 per unit. 
+* **Classic Box** ranks second in total revenue, generating between $205,260.0 (West) and $228,580.0 (North) at an average price of $55.0 per unit.
+* **Family Box** is the lowest-generating product by total revenue across all regions, ranging from $150,705.0 (West) to $168,810.0 (North) at an average price of $85.0 per unit. 
+
+Across all products, the North region consistently achieves the highest total revenue, while the West region records the lowest. The results do not contain information regarding customer success strategies.
+SQL used: SELECT 
+    region,
+    product,
+    SUM(revenue) AS total_revenue,
+    SUM(units_sold) AS total_units,
+    AVG(revenue / units_sold) AS avg_price_per_unit
+FROM sales
+GROUP BY region, product
+ORDER BY total_revenue DESC;
+
+[TOKENOMICS] Agent: manager-synthesis | Input: 709 | Output: 237 | Cost: $0.000805
+
+[Synthesised Answer]
+Based on the provided data and policies, Spoonful sells to four regions (North, South, East, and West) [Source 2]. The North region achieves the highest total revenue across all products, yielding $286,956.0 for Office Lunch, $228,580.0 for Classic Box, and $168,810.0 for Family Box. The West region records the lowest total revenue, generating $258,552.0 for Office Lunch, $205,260.0 for Classic Box, and $150,705.0 for Family Box. 
+
+Office Lunch is designated as the 2026 strategic priority product line [Source 2]. The data shows Office Lunch is the highest-generating product by total revenue across all regions. 
+
+Under company policy, any region missing its quarterly revenue target by more than 10% must present a recovery plan [Source 2]. However, the provided sources do not contain quarterly revenue targets, regional outcomes to compare against targets, or specific policy changes based on customer success strategies.
+Ask a question: 
+Query: What is the refund approval limit for customer care agents?
+
+[TOKENOMICS] Agent: manager-classifier | Input: 89 | Output: 2 | Cost: $0.000032
+Route: qualitative
+
+[TOKENOMICS] Agent: qualitative | Input: 2472 | Output: 30 | Cost: $0.000817
+
+[Qualitative]
+Based on the provided documents, customer care agents may issue refunds or account credits of up to $50 per complaint without approval [Source 1].
+Ask a question: 
+Query: Which department has the lowest employee satisfaction?
+
+[TOKENOMICS] Agent: manager-classifier | Input: 86 | Output: 1 | Cost: $0.000028
+Route: quantitative
+
+[TOKENOMICS] Agent: quantitative | Input: 272 | Output: 42 | Cost: $0.000187
+
+[Quantitative]
+Based on the provided data, the department with the lowest employee satisfaction is Operations.
+SQL used: SELECT department FROM employees GROUP BY department ORDER BY AVG(satisfaction_score) ASC LIMIT 1;
+Ask a question: 

@@ -1,0 +1,67 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 22043.74it/s]
+Spoonful Enterprise RAG System
+Type 'exit' to quit.
+
+Ask a question: 
+Query: How long must passwords be?
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+
+[TOKENOMICS] Agent: manager-classifier | Input: 84 | Output: 2 | Cost: $0.000030
+Route: qualitative
+
+[TOKENOMICS] Agent: qualitative | Input: 2739 | Output: 21 | Cost: $0.000874
+
+[TOKENOMICS] Agent: reviewer | Input: 2900 | Output: 59 | Cost: $0.001017
+
+✅ Reviewer: every claim is supported by the sources
+
+[Qualitative]
+Based on the provided documents, passwords must be at least 14 characters long [Source 2].
+Ask a question: 
+Query: How does our employee satisfaction compare to industry standards and what policies might impact this?
+
+[TOKENOMICS] Agent: manager-classifier | Input: 94 | Output: 1 | Cost: $0.000031
+Route: both
+
+[TOKENOMICS] Agent: qualitative | Input: 2911 | Output: 461 | Cost: $0.002026
+
+[Qualitative]
+Based on the provided documents, Spoonful's employee satisfaction is measured against the following industry benchmark:
+
+* **Industry Benchmark:** According to Spoonful's external benchmarking provider, the average employee satisfaction score for consumer technology and food delivery companies of Spoonful's size is **3.7 out of 5**. For warehouse and fulfilment operations roles specifically, the benchmark is **3.4 out of 5** [Source 1]. Spoonful's target is to achieve an average satisfaction score of at least **4.0 out of 5** in every department, aiming to exceed the industry benchmark [Source 1].
+
+Several policies and programmes within the Employee Wellbeing and Engagement Policy impact employee satisfaction:
+
+* **Flexible Work:** Office-based employees may work remotely up to 3 days per week (with core hours from 10:00 to 15:00 local time). Warehouse and Operations roles receive shift preference scheduling published at least 2 weeks in advance and a shift-swap system [Source 1].
+* **Time Off:** Employees receive 25 days of paid annual leave plus public holidays, 2 paid wellbeing days per year that can be taken at short notice without justification, and a 4-week paid sabbatical after 5 years of continuous service [Source 1].
+* **Learning and Growth:** Every employee has an annual learning budget of $1,500 for courses, conferences, and certifications. Managers must also hold career development conversations with each direct report at least twice a year [Source 1].
+* **Action Planning:** Departments scoring below 3.5 out of 5 on the biannual engagement survey must produce an action plan within 30 days, and departments with high annual attrition (>20%) receive a quarterly retention review [Source 1].
+* **Recognition:** The peer recognition programme allows employees to nominate colleagues for monthly "Full Plate" awards, which include a $100 gift card and a mention at the monthly all-hands meeting [Source 1].
+* **Support Services:** All employees and their dependants have free, confidential access to an Employee Assistance Programme providing 24-hour counselling, financial advice, and legal guidance [Source 1].
+
+[TOKENOMICS] Agent: quantitative | Input: 341 | Output: 87 | Cost: $0.000320
+
+[Quantitative]
+The results show an average employee satisfaction score of approximately 3.77 and an average employee tenure of about 4.93 years. The provided data does not contain information regarding industry standards or company policies.
+SQL used: SELECT 
+    AVG(satisfaction_score) AS avg_employee_satisfaction,
+    AVG(tenure_years) AS avg_employee_tenure
+FROM employees;
+
+[TOKENOMICS] Agent: manager-synthesis | Input: 708 | Output: 151 | Cost: $0.000590
+
+[TOKENOMICS] Agent: reviewer | Input: 3244 | Output: 367 | Cost: $0.001891
+
+✅ Reviewer: every claim is supported by the sources
+
+[Synthesised Answer]
+Spoonful’s average employee satisfaction score is 3.77. 
+
+Comparing this data to the benchmarks and targets in the documents:
+* It is above the consumer technology and food delivery industry benchmark of 3.7 [Source 1].
+* It is above the warehouse and fulfilment operations benchmark of 3.4 [Source 1].
+* It is below the company target of at least 4.0 out of 5 [Source 1].
+
+Employee satisfaction is impacted by policies in the Employee Wellbeing and Engagement Policy, such as Flexible Work, Time Off, Learning and Growth, Action Planning, Recognition, and Support Services [Source 1]. The data does not contain information regarding industry standards or company policies.
+Ask a question: 

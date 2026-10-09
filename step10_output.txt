@@ -1,0 +1,254 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7227.81it/s]
+Spoonful Enterprise RAG System
+Type 'exit' to quit.
+
+Ask a question: 
+Query: What is our company's security policy?
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+
+[TOKENOMICS] Agent: manager-classifier | Input: 87 | Output: 2 | Cost: $0.000031
+Route: qualitative
+
+[TOKENOMICS] Agent: qualitative | Input: 2589 | Output: 500 | Cost: $0.002027
+
+[Qualitative]
+Based on the provided documents, Spoonful Inc.'s Information Security Policy defines how the company protects customer data, employee data, payment information, and company systems [Source 2]. The key elements of the policy include:
+
+* **Scope:** It applies to all full-time employees, part-time employees, contractors, and third-party vendors accessing Spoonful systems (such as the customer ordering platform, warehouse management system, email, and HR portal) [Source 2]. Violations may result in disciplinary action up to termination [Source 2].
+* **Data Classification:** Data is divided into four classes: Public, Internal, Confidential, and Restricted (with specific rules and access controls for each type) [Source 2].
+* **Access Control:** Follows the principle of least privilege, requiring quarterly access reviews by managers, removal of departing employee access within 4 hours, and prohibiting shared accounts (except for documented service accounts) [Source 2].
+* **Passwords and Authentication:** Passwords must be at least 14 characters, not reuse the last 10 passwords, and be stored in the approved password manager. Multi-factor authentication (MFA) is mandatory for supported systems, and hardware security keys are required for engineers with production access [Source 2].
+* **Device Security:** Company laptops require full-disk encryption, automatic screen locks (after 5 minutes), endpoint protection, and OS security updates within 14 days. Personal devices may only access email via the managed mobile app, and lost or stolen devices must be reported to the IT Service Desk within 1 hour [Source 2].
+* **Incident Response:** Suspected incidents must be reported immediately. Incidents are classified by severity (Severity 1 to 3) with specific response times, notification requirements, post-incident reviews, and regulatory assessments if customer personal data is exposed [Source 1, Source 2].
+* **Security Training:** Employees must complete security awareness training during onboarding and annually. The Security team conducts quarterly simulated phishing exercises [Source 1].
+* **Third-Party Vendors:** Vendors processing Confidential or Restricted data must complete a security questionnaire and sign a data processing agreement before gaining access. High-risk vendors are reassessed annually [Source 1].
+* **Exceptions:** Policy exceptions must be requested in writing, approved by the CISO, and documented with an expiry date of no more than 6 months [Source 1].
+Ask a question: 
+Query: Explain the code review process
+
+[TOKENOMICS] Agent: manager-classifier | Input: 83 | Output: 2 | Cost: $0.000030
+Route: qualitative
+
+[TOKENOMICS] Agent: qualitative | Input: 2738 | Output: 610 | Cost: $0.002346
+
+[Qualitative]
+Based on the provided documents, the code review process at Spoonful Engineering (owned by VP of Engineering Marcus Feld) involves the following guidelines and requirements:
+
+* **Purpose:** Code reviews exist to catch defects before they reach customers, spread knowledge across the team, and keep the codebase consistent. Review is viewed as a collaboration rather than a gate, with reviewers and authors sharing responsibility for merged quality [Source 1].
+* **What Requires Review:** Every change to a production repository requires review through a pull request (PR). No one (including managers and the VP of Engineering) may push directly to the main branch, as main is protected and merges are blocked until all required checks pass [Source 1].
+* **Approval Requirements:** 
+  * Standard changes require one approval from an engineer on the owning team [Source 1].
+  * High-risk changes require two approvals, with at least one coming from a senior engineer. High-risk changes include: payment or checkout code, authentication and authorization logic, database schema migrations, infrastructure configuration, and anything touching Confidential or Restricted data [Source 1].
+  * Changes to security tooling require approval from the Security team [Source 1].
+* **Pull Request Guidelines for Authors:**
+  * Keep PRs small (ideally changing fewer than 400 lines, unless generated code or bulk renames) [Source 1].
+  * Every PR description must explain what changed, why it changed, how it was tested, and link the related ticket [Source 1].
+  * Include screenshots for user-facing changes [Source 1].
+  * Authors must run the local test suite and ensure automated checks (unit tests, linting, and dependency vulnerability scans) pass before requesting a review [Source 1].
+* **Reviewer Expectations:**
+  * Reviewers should respond to a request within 1 business day (or step aside and suggest someone else) [Source 1].
+  * They check for correctness, test coverage, readability, security issues, and performance [Source 1].
+  * Comments should be specific and kind, distinguishing between blocking issues and optional suggestions (which are prefixed with "nit:") [Source 1].
+* **AI-Assisted Code:** Code written with AI assistants is held to the standard of any other code. The author is accountable for every line, must be able to explain it, must never include secrets, and must not paste Confidential or Restricted data into external AI tools [Source 1].
+* **Merging and Deployment:** 
+  * After approval, authors merge PRs using squash-merge [Source 1].
+  * Merges to main automatically deploy to staging [Source 1].
+  * Production deploys happen via the release pipeline Monday through Thursday (Friday deploys require on-call engineering manager approval) [Source 1].
+  * Any change causing a production incident is rolled back first and investigated second [Source 1].
+Ask a question: 
+Query: How do we handle customer complaints?
+
+[TOKENOMICS] Agent: manager-classifier | Input: 85 | Output: 2 | Cost: $0.000030
+Route: qualitative
+
+[TOKENOMICS] Agent: qualitative | Input: 2507 | Output: 612 | Cost: $0.002282
+
+[Qualitative]
+Based on the provided documents, customer complaints at Spoonful are handled according to the following procedure:
+
+* **Definition and Logging:** A complaint is any expression of dissatisfaction regarding a meal kit, delivery, charge, or interaction with staff. Complaints arrive via email, in-app chat, phone, and social media, and every complaint is logged in the customer care ticketing system to track trends [Source 1].
+* **Response and Resolution Time Targets:** 
+  * All complaints must be acknowledged within 24 hours [Source 1].
+  * Urgent complaints (suspected food safety issues, allergic reactions, missing deliveries for the current day, and duplicate/incorrect charges over $100) must be acknowledged within 2 hours during business hours [Source 1].
+  * The target for full resolution is 3 business days for standard complaints and 1 business day for urgent complaints [Source 1].
+* **Food Safety and Allergy Complaints:** Any complaint mentioning illness, an allergic reaction, or foreign objects in food is escalated immediately to the Food Safety team and the Customer Care team lead on shift. Agents must not speculate on the cause, and the batch number of the affected box is recorded for warehouse checking [Source 1].
+* **Refunds and Credits:**
+  * Agents may issue refunds or account credits up to $50 without approval [Source 1].
+  * Amounts between $50 and $200 require approval from a Customer Care team lead [Source 1].
+  * Amounts over $200 require approval from the Director of Customer Care [Source 1].
+  * Standard remedies include a credit equal to the value of the affected meal for missing/damaged ingredients, and a full refund of the box plus a $15 goodwill credit for a missing delivery [Source 1].
+* **Escalation Path:**
+  * **Level 1:** Frontline customer care agent [Source 1].
+  * **Level 2:** Customer Care team lead (for complaints unresolved after 2 contacts or when requested by the customer) [Source 1].
+  * **Level 3:** Director of Customer Care (for complaints involving legal threats, media attention, or refunds over $200) [Source 1].
+* **Root Cause Review and Customer Success Integration:** Every Monday, the Customer Care team reviews the previous week's complaints by category (any category rising over 20% week-over-week is assigned a departmental owner). Monthly trends are shared with leadership and Customer Success. Additionally, when a business customer files more than 3 complaints in a quarter, their account manager schedules a review meeting to address root causes [Source 1, Source 2].
+* **Tone and Communication:** Agents must apologize for the customer's experience, clearly explain what will happen next, provide a realistic timeframe, and never blame couriers, suppliers, or other teams in front of the customer [Source 1].
+Ask a question: 
+Query: Show me monthly revenue trends
+
+[TOKENOMICS] Agent: manager-classifier | Input: 83 | Output: 1 | Cost: $0.000027
+Route: quantitative
+
+[TOKENOMICS] Agent: quantitative | Input: 494 | Output: 324 | Cost: $0.000958
+
+[Quantitative]
+Monthly revenue for 2025 starts at $185,169.00 in January and generally increases throughout the year, reaching a peak of $244,658.00 in December. 
+
+The monthly breakdown is as follows:
+* **January:** $185,169.00
+* **February:** $192,497.00
+* **March:** $203,505.00
+* **April:** $202,592.00
+* **May:** $211,683.00
+* **June:** $222,071.00
+* **July:** $228,002.00
+* **August:** $228,573.00
+* **September:** $243,134.00
+* **October:** $231,813.00
+* **November:** $237,171.00
+* **December:** $244,658.00
+
+Aside from a slight dip in April and October, total revenue increases month-over-month across the 2025 calendar year.
+SQL used: SELECT 
+    strftime('%Y-%m', date) AS month, 
+    SUM(revenue) AS total_revenue 
+FROM sales 
+GROUP BY month 
+ORDER BY month;
+Ask a question: 
+Query: What is our customer churn rate?
+
+[TOKENOMICS] Agent: manager-classifier | Input: 85 | Output: 1 | Cost: $0.000028
+Route: quantitative
+
+[TOKENOMICS] Agent: quantitative | Input: 291 | Output: 99 | Cost: $0.000335
+
+[Quantitative]
+Based on the query results, the customer churn rate is approximately 18.33%. This indicates that roughly 18 out of every 100 customers have a recorded churn date out of the total customer base in the dataset.
+SQL used: SELECT 
+    (CAST(SUM(CASE WHEN churn_date IS NOT NULL THEN 1 ELSE 0 END) AS REAL) / COUNT(*)) * 100 AS churn_rate
+FROM customers;
+Ask a question: 
+Query: Compare Q4 performance across regions
+
+[TOKENOMICS] Agent: manager-classifier | Input: 84 | Output: 1 | Cost: $0.000028
+Route: quantitative
+
+[TOKENOMICS] Agent: quantitative | Input: 406 | Output: 253 | Cost: $0.000754
+
+[Quantitative]
+In Q4, total revenue, units sold, and transactions varied across the four regions. The North region led with the highest performance, generating $195,776.0 in revenue, 8,812 units sold, and 9 transactions. The East region followed closely with $192,345.0 in revenue, 8,742 units sold, and 9 transactions, and the South region recorded $184,515.0 in revenue, 8,489 units sold, and 9 transactions. The West region performed the lowest across all metrics, with $141,006.0 in revenue, 6,358 units sold, and 9 transactions. Each region recorded exactly 9 transactions during this period.
+SQL used: SELECT 
+    region,
+    SUM(revenue) AS total_revenue,
+    SUM(units_sold) AS total_units_sold,
+    COUNT(id) AS total_transactions
+FROM sales
+WHERE strftime('%m', date) IN ('10', '11', '12')
+GROUP BY region
+ORDER BY total_revenue DESC;
+Ask a question: 
+Query: How does our employee satisfaction compare to industry standards and what policies might impact this?
+
+[TOKENOMICS] Agent: manager-classifier | Input: 94 | Output: 1 | Cost: $0.000031
+Route: both
+
+[TOKENOMICS] Agent: qualitative | Input: 2911 | Output: 497 | Cost: $0.002116
+
+[Qualitative]
+Based on the provided documents:
+
+* **Comparison to industry standards:** Spoonful runs anonymous engagement surveys twice a year, aiming for an average satisfaction score of at least 4.0 out of 5 in every department [Source 1]. According to Spoonful's external benchmarking provider, the average employee satisfaction score for consumer technology and food delivery companies of Spoonful's size is 3.7 out of 5, while the benchmark for warehouse and fulfilment operations roles is 3.4 out of 5 [Source 1]. Spoonful aims to exceed these industry benchmarks in every department [Source 1]. 
+* **Policies that impact employee satisfaction:** The *Employee Wellbeing and Engagement Policy* outlines several programmes and rules designed to support wellbeing, growth, and retention, which directly impact employee satisfaction [Source 1]:
+  * **Flexible Work:** Office-based employees may work remotely up to 3 days per week with core collaboration hours (10:00 to 15:00), while warehouse and operations employees receive shift preference scheduling (published at least 2 weeks in advance) and a shift-swap system [Source 1].
+  * **Time Off:** Employees receive 25 days of paid annual leave plus public holidays, 2 paid wellbeing days per year that can be taken at short notice without justification, and a 4-week paid sabbatical after 5 years of continuous service [Source 1].
+  * **Learning and Growth:** An annual learning budget of $1,500 per employee is provided for courses, conferences, and certifications, alongside mandatory career development conversations with managers at least twice a year [Source 1].
+  * **Action Planning & Retention Reviews:** Any department scoring below 3.5 out of 5 on engagement surveys must produce an action plan within 30 days, and departments with high turnover (more than 20% annual attrition) receive quarterly retention reviews [Source 1].
+  * **Recognition:** The peer recognition programme allows employees to nominate colleagues for monthly "Full Plate" awards, which include a $100 gift card and a mention at the all-hands meeting [Source 1].
+  * **Support Services:** Free, confidential access to the Employee Assistance Programme (counselling, financial advice, and legal guidance) is available 24/7 for all employees and their dependants [Source 1].
+
+[TOKENOMICS] Agent: quantitative | Input: 274 | Output: 64 | Cost: $0.000242
+
+[Quantitative]
+Based on the provided data, the average employee satisfaction score is 3.77 (out of 5). 
+
+The provided results do not contain information on industry standards or specific company policies.
+SQL used: SELECT AVG(satisfaction_score) AS avg_employee_satisfaction
+FROM employees;
+
+[TOKENOMICS] Agent: manager-synthesis | Input: 741 | Output: 202 | Cost: $0.000727
+
+[Synthesised Answer]
+The average employee satisfaction score is 3.77 out of 5. 
+
+Comparing this data to Spoonful's targets and benchmarks:
+* The score of 3.77 is **below** the company's internal departmental target of at least 4.0 [Source 1].
+* The score of 3.77 is **above** the industry benchmark for warehouse and fulfilment operations roles (3.4) [Source 1]. 
+* The score of 3.77 matches the industry average for consumer technology and food delivery companies of Spoonful's size (3.7) [Source 1].
+
+Key policies impacting satisfaction include the *Employee Wellbeing and Engagement Policy* [Source 1], which covers Flexible Work, Time Off, Learning and Growth, and Action Planning & Retention Reviews (requiring action plans for departments scoring below 3.5) [Source 1]. The data answers do not cover company policies or industry standards.
+Ask a question: 
+Query: Analyse our sales performance and recommend policy changes based on our customer success strategies
+
+[TOKENOMICS] Agent: manager-classifier | Input: 92 | Output: 1 | Cost: $0.000030
+Route: both
+
+[TOKENOMICS] Agent: qualitative | Input: 2514 | Output: 664 | Cost: $0.002414
+
+[Qualitative]
+Based on the provided documents, I can provide the following analysis of sales performance tracking and recommendations based on customer success strategies:
+
+### Sales Performance Tracking and Reviews
+* **Regional Performance and Targets:** Quarterly revenue targets are set per region (North, South, East, and West) by the Chief Revenue Officer [Source 2]. At the end of each quarter, Regional Sales Leads present revenue, units sold, and discount levels for their region, and are compared on these metrics [Source 2]. 
+* **Recovery Plans:** Any region that misses its quarterly revenue target by more than 10% is required to present a recovery plan at the following leadership meeting [Source 2].
+* **Strategic Priorities:** Business customers can buy Classic Boxes, Family Boxes, and Office Lunch products, with *Office Lunch* carrying the highest margin and serving as the strategic priority for 2026 [Source 2].
+
+### Policy Recommendations & Alignment with Customer Success
+To align sales operations with Spoonful's 2026 customer success strategy (which aims to reduce annual customer churn from 18% to 14% and raise average customer satisfaction scores) [Source 1], the following policy changes and operational improvements are supported by the text:
+
+1. **Strict Post-Sale Handoffs to Protect Onboarding:** 
+   * *Strategy Context:* New business customers require a kickoff call with an account manager within 5 business days of signing to reduce early churn [Source 1]. 
+   * *Recommendation:* Enforce strict adherence to the customer handoff policy (which already mandates handing the account to Customer Success within 2 business days along with goals and sales promises) [Source 2]. Sales representatives must be held accountable for this timeline so that account managers can successfully execute the 5-day kickoff requirement.
+
+2. **Aligning Discounting Authority with Customer Health:**
+   * *Strategy Context:* Business accounts generate a larger share of revenue and are the focus of retention efforts [Source 1]. However, deep discounts can attract price-sensitive accounts that may carry higher churn risks if not managed properly. 
+   * *Recommendation:* Ensure that sales discounts strictly follow governance (up to 10% self-approved, 10%–20% requiring Regional Sales Lead approval, and >20% requiring CRO approval with written justification) [Source 2]. Furthermore, multi-year contracts receive an additional 5% discount [Source 2]; Customer Success should closely monitor these multi-year accounts using monthly health scores (tracking order frequency, satisfaction, complaints, and payment history) [Source 1] to ensure long-term retention offsets the discounted revenue.
+
+3. **Managing Customer Expectations:**
+   * *Strategy Context:* Customer Success relies heavily on accurate onboarding and root-cause reviews when complaint volumes rise [Source 1, Source 4]. 
+   * *Recommendation:* Enforce the rule prohibiting sales representatives from promising features, delivery windows, or refund terms not present in the standard contract [Source 2]. Preventing unrealistic sales promises directly reduces future customer care complaints regarding delivery and terms, protecting the customer satisfaction score target of 4.2 out of 5 [Source 1].
+
+[TOKENOMICS] Agent: quantitative | Input: 667 | Output: 380 | Cost: $0.001150
+
+[Quantitative]
+The data shows performance metrics across five industries, each comprising 12 customers:
+
+* **Education:** Generates the highest total revenue ($203,696.00) and total units sold (8,665), with an average customer satisfaction score of 3.78 and average sale revenue of $16,974.67.
+* **Technology:** Yields the highest average customer satisfaction score (4.10), total revenue of $201,369.00, and 8,531 units sold.
+* **Retail:** Records $200,889.00 in total revenue and 8,536 units sold, with a satisfaction score of 3.66.
+* **Healthcare:** Shows a satisfaction score of 4.07, total revenue of $196,068.00, and 8,161 units sold.
+* **Finance:** Represents the lowest total revenue ($193,424.00) and units sold (8,159), alongside a satisfaction score of 3.96.
+
+The results do not contain information regarding customer success strategies.
+SQL used: SELECT 
+    c.industry,
+    COUNT(DISTINCT c.id) AS total_customers,
+    AVG(c.satisfaction_score) AS avg_customer_satisfaction,
+    SUM(s.revenue) AS total_revenue,
+    SUM(s.units_sold) AS total_units_sold,
+    AVG(s.revenue) AS avg_sale_revenue
+FROM customers c
+JOIN sales s ON c.id = s.id
+GROUP BY c.industry
+ORDER BY total_revenue DESC;
+
+[TOKENOMICS] Agent: manager-synthesis | Input: 1125 | Output: 173 | Cost: $0.000770
+
+[Synthesised Answer]
+The database provides sales metrics across five industries (Education, Technology, Retail, Healthcare, and Finance), but contains no information regarding customer success strategies. 
+
+Comparing the customer satisfaction scores (Education: 3.78, Technology: 4.10, Retail: 3.66, Healthcare: 4.07, Finance: 3.96) to the customer satisfaction score target of 4.2 out of 5 [Source 1], all industry scores are below the target. 
+
+To protect the target of 4.2 [Source 1], policy changes should enforce rules prohibiting sales representatives from promising features not in standard contracts [Source 2], and ensure strict adherence to the customer handoff policy [Source 2] so account managers can conduct kickoff calls within 5 business days [Source 1].
+Ask a question: 

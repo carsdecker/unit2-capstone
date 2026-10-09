@@ -1,0 +1,31 @@
+SPOONFUL — CUSTOMER SUCCESS STRATEGY 2026
+Document owner: Head of Customer Success, David Okafor
+Approved by the leadership team: February 10, 2026
+
+STRATEGIC GOAL
+
+Our goal for 2026 is to reduce annual customer churn from 18% to 14% while raising the average customer satisfaction score from 3.9 to 4.2 out of 5. Retaining an existing subscriber costs roughly one fifth of what it costs to acquire a new one, so retention is our highest-leverage growth lever this year.
+
+CUSTOMER SEGMENTS
+
+Spoonful serves two kinds of customers. Consumer subscribers order weekly meal kits for their households. Business customers are companies that buy Spoonful meal kits for employee perks, office lunches, and events; business customers are grouped by industry, such as Technology, Healthcare, Finance, Education, and Retail. Business customers generate a smaller share of orders but a larger share of revenue per account, and they are the focus of the dedicated account management programme.
+
+PILLAR 1: ONBOARDING
+
+New subscribers receive a guided first-box experience, including a welcome email series and a short preference quiz that tailors recipe recommendations. Business customers receive a kickoff call with an account manager within 5 business days of signing. Our data shows that customers who customise their first two boxes are far less likely to cancel in their first 90 days.
+
+PILLAR 2: HEALTH SCORING AND EARLY WARNING
+
+Every business account receives a monthly health score based on order frequency, satisfaction survey results, complaint volume, and payment history. Any account whose satisfaction score falls below 3.0 out of 5 is marked "at risk" and receives an outreach call from its account manager within 7 days. Accounts that skip three consecutive weekly deliveries trigger an automated check-in email.
+
+PILLAR 3: CLOSING THE LOOP WITH CUSTOMER CARE
+
+Customer Success receives the monthly complaint trend report from Customer Care. When a business customer files more than 3 complaints in a quarter, their account manager schedules a review meeting to address root causes rather than individual incidents.
+
+PILLAR 4: RETENTION OFFERS
+
+Customers who begin the cancellation flow are offered, in order: the option to pause deliveries for up to 6 weeks, a plan downgrade, and finally a one-time discount of up to 25% on their next two boxes. Discounts larger than 25% require Customer Success leadership approval. Retention offers are capped at one per customer per 12 months to avoid training customers to threaten cancellation.
+
+MEASUREMENT
+
+Customer Success reports churn rate, satisfaction score, and net revenue retention to leadership every quarter, broken down by customer industry and region.

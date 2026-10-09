@@ -1,0 +1,35 @@
+SPOONFUL ENGINEERING — CODE REVIEW PROCESS
+Document owner: VP of Engineering, Marcus Feld
+Last updated: March 3, 2026
+
+WHY WE REVIEW CODE
+
+Code review at Spoonful exists to catch defects before they reach customers, to spread knowledge across the team, and to keep the codebase consistent. Review is a collaboration, not a gate: reviewers and authors share responsibility for the quality of every change that is merged.
+
+WHAT REQUIRES REVIEW
+
+Every change to a production repository requires review through a pull request (PR). No one, including engineering managers and the VP of Engineering, may push directly to the main branch. Main is protected, and merges are blocked until all required checks pass.
+
+APPROVAL REQUIREMENTS
+
+Standard changes require one approval from an engineer on the owning team.
+
+High-risk changes require two approvals, at least one from a senior engineer. High-risk changes include: changes to payment or checkout code, authentication and authorisation logic, database schema migrations, infrastructure configuration, and anything touching Confidential or Restricted data as defined in the Information Security Policy.
+
+Changes to the security tooling itself require an approval from the Security team.
+
+PULL REQUEST GUIDELINES FOR AUTHORS
+
+Keep pull requests small. PRs should ideally change fewer than 400 lines; larger changes should be split into a sequence of smaller PRs unless they are generated code or bulk renames. Every PR description must explain what changed, why it changed, and how it was tested. Link the related ticket. Include screenshots for any user-facing change. Authors must run the test suite locally and ensure automated checks (unit tests, linting, and the dependency vulnerability scan) pass before requesting review.
+
+REVIEWER EXPECTATIONS
+
+Reviewers should respond to a review request within 1 business day. If a reviewer cannot review in that time, they should say so and suggest another reviewer. Reviewers check for correctness, test coverage, readability, security issues, and performance. Comments should be specific and kind, and should distinguish between blocking issues and optional suggestions; optional comments are prefixed with "nit:".
+
+AI-ASSISTED CODE
+
+Code written with the help of AI assistants is held to the same standard as any other code. The author is accountable for every line they submit and must be able to explain it. AI-generated code must never include secrets, and authors must not paste Confidential or Restricted data into external AI tools when generating code.
+
+MERGING AND DEPLOYMENT
+
+After approval, the author merges the PR using squash-merge. Merges to main deploy automatically to the staging environment. Production deploys happen through the release pipeline Monday through Thursday; Friday deploys require approval from the on-call engineering manager. Any change that causes a production incident is rolled back first and investigated second.

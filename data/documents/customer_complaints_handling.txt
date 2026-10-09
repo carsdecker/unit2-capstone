@@ -1,0 +1,33 @@
+SPOONFUL CUSTOMER CARE — COMPLAINT HANDLING PROCEDURE
+Document owner: Director of Customer Care, Elena Ortiz
+Last updated: May 20, 2026
+
+OVERVIEW
+
+A complaint is any expression of dissatisfaction from a customer about a meal kit, a delivery, a charge, or an interaction with Spoonful staff. Complaints arrive through email, in-app chat, phone, and social media. Every complaint is logged in the customer care ticketing system, regardless of channel, so that trends can be tracked.
+
+RESPONSE TIME TARGETS
+
+All complaints must be acknowledged within 24 hours. Complaints flagged as urgent must be acknowledged within 2 hours during business hours. Urgent complaints include: suspected food safety issues, allergic reactions, missing deliveries for the current day, and duplicate or incorrect charges over $100. The target for full resolution is 3 business days for standard complaints and 1 business day for urgent complaints.
+
+FOOD SAFETY AND ALLERGY COMPLAINTS
+
+Any complaint that mentions illness, an allergic reaction, or foreign objects in food is escalated immediately to the Food Safety team and the Customer Care team lead on shift. The agent must not speculate on the cause. The affected box's batch number is recorded so that the warehouse can check other boxes from the same batch.
+
+REFUNDS AND CREDITS
+
+Customer care agents may issue refunds or account credits of up to $50 per complaint without approval. Amounts between $50 and $200 require approval from a Customer Care team lead. Amounts over $200 require approval from the Director of Customer Care. For a missing or damaged ingredient, the standard remedy is a credit equal to the value of the affected meal. For a missing delivery, the standard remedy is a full refund of the box plus a $15 goodwill credit.
+
+ESCALATION PATH
+
+Level 1: frontline customer care agent.
+Level 2: Customer Care team lead, for complaints unresolved after 2 contacts or where the customer requests escalation.
+Level 3: Director of Customer Care, for complaints involving legal threats, media attention, or refunds over $200.
+
+ROOT CAUSE REVIEW
+
+Every Monday, the Customer Care team reviews the previous week's complaints by category. Any category whose volume rises by more than 20% week over week is assigned an owner from the relevant department, such as Logistics for late deliveries or Culinary for recipe quality. Monthly complaint trends are shared with the leadership team and with Customer Success.
+
+TONE AND COMMUNICATION
+
+Agents apologise for the customer's experience, explain clearly what will happen next, and give a realistic timeframe. Agents never blame couriers, suppliers, or other teams in front of a customer.
